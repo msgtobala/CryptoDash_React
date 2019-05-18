@@ -2,13 +2,16 @@ import React from "react";
 
 import WelcomeMessage from './WelcomeMessage';
 import ConfirmButton from './ConfirmButon';
+import Page from '../Shared/Pages';
+import CoinGrid from './CoinGrid';
 
 const Settings = () => {
     return (
-        <div>
+        <Page name="Settings">
             <WelcomeMessage />
             <ConfirmButton btnName={"Confirm Favorites"}/>
-        </div>
+            <CoinGrid />
+        </Page>
     )
 }
 

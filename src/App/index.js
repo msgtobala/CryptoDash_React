@@ -7,11 +7,12 @@ import Settings from "../settings/index";
 //   InheritedButton,
 //   SimpleButton
 // } from "./TestStyles";
-import AppLayout from './styles/AppLayout';
+import AppLayout from "./styles/AppLayout";
 import "./App.css";
-import AppBar from './AppBar/AppBar';
+import AppBar from "./AppBar/AppBar";
+import Content from "../Shared/Content";
 
-import AppProvider from './AppProvider';
+import AppProvider from "./AppProvider";
 
 function App() {
   return (
@@ -26,8 +27,10 @@ function App() {
     <AppLayout>
       <AppProvider>
         <AppBar />
-        <Settings />
-      </AppProvider>      
+        <Content>
+          <Settings />
+        </Content>
+      </AppProvider>
     </AppLayout>
   );
 }
