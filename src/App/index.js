@@ -1,6 +1,6 @@
 import React from "react";
 
-import WelcomeMessage from "./WelcomeMessage";
+import Settings from "../settings/index";
 // import {
 //   MyButton,
 //   AnotherButton,
@@ -10,6 +10,8 @@ import WelcomeMessage from "./WelcomeMessage";
 import AppLayout from './styles/AppLayout';
 import "./App.css";
 import AppBar from './AppBar/AppBar';
+
+import AppProvider from './AppProvider';
 
 function App() {
   return (
@@ -22,8 +24,10 @@ function App() {
     //   <SimpleButton primary> Test </SimpleButton>
     // </React.Fragment>
     <AppLayout>
-      <AppBar />
-      <WelcomeMessage />
+      <AppProvider>
+        <AppBar />
+        <Settings />
+      </AppProvider>      
     </AppLayout>
   );
 }
