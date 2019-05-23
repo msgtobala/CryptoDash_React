@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 const theme = "dark";
 //const theme = 'light';
 export const lightTheme = theme === "light";
@@ -21,7 +23,7 @@ export const subtleBoxShadow = `box-shadow: 0px 0px 5px 1px ${
   lightTheme ? "#a9b6ff" : "#121d5b"
 }`;
 export const greenBoxShadow = `box-shadow: 0px 0px 4px 2px #5fff17`;
-export const redBoxShadow = `box-shadow: 0px 0px 2px 2px #e41111`;
+export const redBoxShadow = `box-shadow: 0px 0px 4px 2px #e41111`;
 
 export const fontSizeBig = "font-size: 2em";
 export const fontSize1 = "font-size: 1.5em;";
@@ -29,3 +31,29 @@ export const fontSize2 = "font-size: 1.0em";
 export const fontSize3 = "font-size: .75em";
 
 export const textAlignCenter = "text-align: center;";
+
+
+export const Tile = styled.div`
+  ${subtleBoxShadow}
+  ${lightBlueBackground}
+  padding: 10px;
+`;
+
+export const SelectableTile = styled(Tile)`
+  &:hover {
+    cursor: pointer;
+    ${greenBoxShadow}
+  }
+`;
+
+export const DeletableTile = styled(SelectableTile)`
+  &:hover {
+    cursor: pointer;
+    ${redBoxShadow}
+  }
+`;
+
+export const DisabledTile = styled(Tile)`
+  pointer-events: none;
+  opacity: 0.4;
+`;

@@ -9,6 +9,7 @@ const Settings = () => {
     return (
         <Page name="Settings">
             <WelcomeMessage />
+            <CoinGrid topSection/>
             <ConfirmButton btnName={"Confirm Favorites"}/>
             <CoinGrid />
         </Page>

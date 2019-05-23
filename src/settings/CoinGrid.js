@@ -2,14 +2,20 @@ import React from "react";
 
 import { AppContext } from "../App/AppProvider";
 import { CoinGrid } from "./styles";
+import CoinTile  from './CoinTile';
 
-const coinGrid = () => {
+
+const getCoinsToDisplay = (coinList, topSection) => {
+  return Object.keys(coinList).slice(0, topSection ? 10 : 100);
+}
+
+const coinGrid = (props) => {
   return (
     <AppContext.Consumer>
       {({ coinList }) => (
         <CoinGrid>
-          {Object.keys(coinList).map(coinKey => (
-            <div key={coinKey}>{coinKey}</div>
+          {getCoinsToDisplay(coinList, props.topSection).map(coinKey => (
+            <CoinTile topSection = {props.topSection} key={coinKey} coinKey={coinKey} />
           ))}
         </CoinGrid>
       )}
